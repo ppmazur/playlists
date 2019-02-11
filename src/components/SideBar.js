@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Logo from './Logo';
-import Library from '../containers/LibraryContainer';
+import Library from './Library';
 
 const StyledSideBar = styled.div`
   display: flex;

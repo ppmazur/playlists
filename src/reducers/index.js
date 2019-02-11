@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import playlists from './playlists';
-import songs from './songs';
+import tracks from './tracks';
 
 const playlistsApp = combineReducers({
   playlists,
-  songs,
+  tracks,
 });
 
 export default playlistsApp;

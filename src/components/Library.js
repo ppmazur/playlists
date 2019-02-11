@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import LibraryItem from './LibraryItemContainer';
+import LibraryItem from './LibraryItem';
 
 const StyledList = styled.div`
   display: flex;
 `;
 
-const LibraryContainer = ({ playlists }) =>
+const Library = ({ playlists }) =>
   <StyledList>
     {playlists.map(playlist =>
       <LibraryItem
@@ -22,4 +22,4 @@ const mapStateToProps = state => ({
   playlists: state.playlists.allIds,
 });
 
-export default connect(mapStateToProps)(LibraryContainer);
+export default connect(mapStateToProps)(Library);

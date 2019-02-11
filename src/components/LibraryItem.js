@@ -12,13 +12,13 @@ const StyledRow = styled.div`
   }
 `;
 
-const LibraryItemContainer = ({ playlist }) =>
+const LibraryItem = ({ playlist }) =>
   <StyledRow>
-    {playlist.id} {playlist.name} {playlist.songs.length}
+    {playlist.id} {playlist.name} {playlist.tracks.length}
   </StyledRow>;
 
 const mapStateToProps = (state, { playlistId }) => ({
   playlist: state.playlists.byId[playlistId],
 });
 
-export default connect(mapStateToProps)(LibraryItemContainer);
+export default connect(mapStateToProps)(LibraryItem);
