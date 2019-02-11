@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Logo from './Logo';
-import Playlists from '../containers/PlaylistsContainer';
+import Library from '../containers/LibraryContainer';
 
 const StyledSideBar = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ const StyledSideBar = styled.div`
 const SideBar = () =>
   <StyledSideBar>
     <Logo />
-    <Playlists />
+    <Library />
   </StyledSideBar>;
 
 export default SideBar;

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-const StyledPlaylist = styled.div`
+const StyledRow = styled.div`
   width: 100%;
   background: burlywood;
   padding: 5px 15px;
@@ -12,13 +12,13 @@ const StyledPlaylist = styled.div`
   }
 `;
 
-const PlaylistContainer = ({ playlist }) =>
-  <StyledPlaylist>
+const LibraryItemContainer = ({ playlist }) =>
+  <StyledRow>
     {playlist.id} {playlist.name} {playlist.songs.length}
-  </StyledPlaylist>;
+  </StyledRow>;
 
 const mapStateToProps = (state, { playlistId }) => ({
   playlist: state.playlists.byId[playlistId],
 });
 
-export default connect(mapStateToProps)(PlaylistContainer);
+export default connect(mapStateToProps)(LibraryItemContainer);
