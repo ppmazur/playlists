@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import logo from '../logo.svg';
-import './App.css';
+import GlobalStyle from '../theme/globalStyle';
+
+const AppWrapper = styled.div`
+  text-align: left;
+`;
+
+const StyledHeader = styled.header`
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+      <AppWrapper>
+        <StyledHeader>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
@@ -19,8 +35,9 @@ class App extends Component {
           >
             Learn React
           </a>
-        </header>
-      </div>
+        </StyledHeader>
+        <GlobalStyle />
+      </AppWrapper>
     );
   }
 }
