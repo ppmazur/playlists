@@ -1,12 +1,14 @@
 import uniqid from 'uniqid';
 
+export const PLAYLIST_ADD = 'PLAYLIST_ADD';
+export const PLAYLIST_SET_ACTIVE = 'PLAYLIST_SET_ACTIVE';
+
 export const addPlaylist = name => ({
-  type: 'ADD_PLAYLIST',
+  type: PLAYLIST_ADD,
   id: uniqid(),
   name,
 });
-
 export const setActivePlaylist = playlistId => ({
-  type: 'SET_ACTIVE_PLAYLIST',
+  type: PLAYLIST_SET_ACTIVE,
   id: playlistId,
 });

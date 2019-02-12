@@ -1,5 +1,10 @@
 import uniqid from 'uniqid';
 
+import {
+  PLAYLIST_ADD,
+  PLAYLIST_SET_ACTIVE,
+} from '../actions';
+
 const playlist1Id = uniqid();
 const playlist2Id = uniqid();
 const initState = {
@@ -13,7 +18,7 @@ const initState = {
 
 const playlists = (state = initState, action) => {
   switch (action.type) {
-  case 'ADD_PLAYLIST':
+  case PLAYLIST_ADD:
     const { id, name } = action;
     const newPlaylist = {
       id,
@@ -25,7 +30,7 @@ const playlists = (state = initState, action) => {
       byId: {...state.byId, [id]: newPlaylist},
       allIds: [...state.allIds, id],
     };
-  case 'SET_ACTIVE_PLAYLIST':
+  case PLAYLIST_SET_ACTIVE:
     return {
       ...state,
       activePlaylist: action.id,
