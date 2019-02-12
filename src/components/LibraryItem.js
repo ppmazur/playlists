@@ -1,24 +1,36 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { setActivePlaylist } from '../actions';
 
 const StyledRow = styled.div`
-  width: 100%;
-  background: burlywood;
-  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  background-color: ${({ isActive }) => isActive ? '#E37222' : '#008B95'};
+  padding: 0 15px;
+  min-height: 40px;
   cursor: pointer;
   &:hover {
-    background: #b99367;
+    background-color: ${({ isActive }) => isActive ? '#E37222' : '#00979c'};
+    cursor: pointer;
   }
 `;
 
-const LibraryItem = ({ playlist }) =>
-  <StyledRow>
-    {playlist.id} {playlist.name} {playlist.tracks.length}
+const LibraryItem = ({ isActive, playlist, setActivePlaylist }) =>
+  <StyledRow
+    isActive={isActive}
+    onClick={() => setActivePlaylist(playlist.id)}
+  >
+    {playlist.name}
   </StyledRow>;
 
 const mapStateToProps = (state, { playlistId }) => ({
   playlist: state.playlists.byId[playlistId],
 });
 
-export default connect(mapStateToProps)(LibraryItem);
+const mapDispatchToProps = (dispatch, { isActive }) => ({
+  setActivePlaylist: playlistId =>
+    !isActive && dispatch(setActivePlaylist(playlistId)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LibraryItem);

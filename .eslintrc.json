@@ -33,7 +33,7 @@
     "new-cap": "error",
     "new-parens": "error",
     "no-caller": "error",
-    "no-console": ["error", {"allow": [""]}],
+    "no-console": [1, {"allow": [""]}],
     "no-extra-parens": ["error", "all", {"ignoreJSX": "all"}],
     "no-label-var": "error",
     "no-labels": "error",

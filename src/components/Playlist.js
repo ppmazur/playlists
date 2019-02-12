@@ -9,6 +9,8 @@ const StyledPlaylist = styled.div`
   flex-direction: column;
   width: 100%;
   padding: 10px;
+  background-color: #008B95;
+  border: 30px solid #E37222;
 `;
 
 const Title = styled.div`

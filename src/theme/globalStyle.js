@@ -7,6 +7,7 @@ export default createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
+    color: #f7f7f7;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

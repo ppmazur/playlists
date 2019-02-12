@@ -7,7 +7,6 @@ const StyledLogo = styled.div`
   display: flex;
   align-items: center;
   height: 100px;
-  background: aqua;
 `;
 
 const Image = styled.img`
