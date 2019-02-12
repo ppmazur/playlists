@@ -10,7 +10,6 @@ const Wrapper = styled.div`
 
 const Input = styled.input`
   display: inline;
-  width: auto;
   padding: 10px 15px;
   border: inherit;
   background-color: #00979c;
@@ -21,7 +20,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.div`
-  padding: 10px 15px;
+  padding: 10px;
   cursor: pointer;
   &:hover {
     background-color: #00979c;
@@ -48,10 +47,10 @@ const PlaylistName = ({ addPlaylist, onComplete }) => {
         autoFocus={true}
       />
       <Button onClick={handleCancel}>
-        &#10008;
+        &#10005;
       </Button>
       <Button onClick={handleConfirm}>
-        &#10004;
+        &#10003;
       </Button>
     </Wrapper>
   );
