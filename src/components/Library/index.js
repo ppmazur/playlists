@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import LibraryItem from './LibraryItem';
+import LibraryItem from './Item';
 
 const StyledList = styled.div`
   display: flex;

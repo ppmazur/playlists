@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { setActivePlaylist } from '../actions';
+import { setActivePlaylist } from '../../actions';
 
 const StyledRow = styled.div`
   display: flex;

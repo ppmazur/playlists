@@ -37,6 +37,9 @@ const PlaylistName = ({ addPlaylist, onComplete }) => {
     addPlaylist(name);
     onComplete();
   };
+  const handleCancel = () => {
+    onComplete();
+  };
   return (
     <Wrapper>
       <Input
@@ -44,8 +47,8 @@ const PlaylistName = ({ addPlaylist, onComplete }) => {
         onChange={handleChange}
         autoFocus={true}
       />
-      <Button onClick={onComplete}>
-        &#10007;
+      <Button onClick={handleCancel}>
+        &#10008;
       </Button>
       <Button onClick={handleConfirm}>
         &#10004;
