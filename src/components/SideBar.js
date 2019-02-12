@@ -10,7 +10,7 @@ const StyledSideBar = styled.div`
   flex-direction: column;
   height: 100%;
   min-width: 300px;
-  background: #008B95;
+  background-color: #008B95;
 `;
 
 const SideBar = () =>

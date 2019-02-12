@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { setActivePlaylist } from '../../actions';
+import { setActivePlaylist } from '../actions';
 
 const StyledRow = styled.div`
   display: flex;
@@ -16,10 +16,10 @@ const StyledRow = styled.div`
   }
 `;
 
-const LibraryItem = ({ isActive, playlist, setActivePlaylist }) =>
+const SimplePlaylist = ({ isActive, playlist, onClick }) =>
   <StyledRow
     isActive={isActive}
-    onClick={() => setActivePlaylist(playlist.id)}
+    onClick={() => !isActive && onClick(playlist.id)}
   >
     {playlist.name}
   </StyledRow>;
@@ -28,9 +28,4 @@ const mapStateToProps = (state, { playlistId }) => ({
   playlist: state.playlists.byId[playlistId],
 });
 
-const mapDispatchToProps = (dispatch, { isActive }) => ({
-  setActivePlaylist: playlistId =>
-    !isActive && dispatch(setActivePlaylist(playlistId)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(LibraryItem);
+export default connect(mapStateToProps)(SimplePlaylist);

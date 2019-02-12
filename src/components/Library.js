@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import LibraryItem from './Item';
+import SimplePlaylist from './SimplePlaylist';
+import { setActivePlaylist } from '../actions';
 
 const StyledList = styled.div`
   display: flex;
@@ -11,13 +12,14 @@ const StyledList = styled.div`
   overflow-y: auto;
 `;
 
-const Library = ({ activePlaylist, playlists }) =>
+const Library = ({ activePlaylist, playlists, setActivePlaylist }) =>
   <StyledList>
     {playlists.map(playlist =>
-      <LibraryItem
-        key={playlist}
-        playlistId={playlist}
+      <SimplePlaylist
         isActive={playlist === activePlaylist}
+        key={playlist}
+        onClick={setActivePlaylist}
+        playlistId={playlist}
       />
     )}
   </StyledList>;
@@ -27,4 +29,8 @@ const mapStateToProps = state => ({
   activePlaylist: state.playlists.activePlaylist,
 });
 
-export default connect(mapStateToProps)(Library);
+const mapDispatchToProps = dispatch => ({
+  setActivePlaylist: playlistId => dispatch(setActivePlaylist(playlistId)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Library);

@@ -33,8 +33,10 @@ const PlaylistName = ({ addPlaylist, onComplete }) => {
     setName(event.target.value);
   };
   const handleConfirm = () => {
-    addPlaylist(name);
-    onComplete();
+    if (name !== '') {
+      addPlaylist(name);
+      onComplete();
+    }
   };
   const handleCancel = () => {
     onComplete();
