@@ -4,23 +4,28 @@ import styled from 'styled-components';
 
 import { addPlaylist } from '../../actions';
 
-
-const Inputs = styled.div`
+const Wrapper = styled.div`
   display: flex;
 `;
 
 const Input = styled.input`
-  padding: 10px;
+  display: inline;
+  width: auto;
+  padding: 10px 15px;
+  border: inherit;
+  background-color: #00979c;
+  outline: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
 `;
 
-const CancelBtn = styled.button`
-  padding: 10px;
+const Button = styled.div`
+  padding: 10px 15px;
   cursor: pointer;
-`;
-
-const ConfirmBtn = styled.button`
-  padding: 10px;
-  cursor: pointer;
+  &:hover {
+    background-color: #00979c;
+  }
 `;
 
 const PlaylistName = ({ addPlaylist, onComplete }) => {
@@ -33,19 +38,19 @@ const PlaylistName = ({ addPlaylist, onComplete }) => {
     onComplete();
   };
   return (
-    <Inputs>
+    <Wrapper>
       <Input
         value={name}
         onChange={handleChange}
         autoFocus={true}
       />
-      <CancelBtn onClick={onComplete}>
+      <Button onClick={onComplete}>
         &#10007;
-      </CancelBtn>
-      <ConfirmBtn onClick={handleConfirm}>
+      </Button>
+      <Button onClick={handleConfirm}>
         &#10004;
-      </ConfirmBtn>
-    </Inputs>
+      </Button>
+    </Wrapper>
   );
 };
 
