@@ -12,7 +12,7 @@
   },
   "rules": {
     "accessor-pairs": "error",
-    "array-bracket-spacing": "off", // Handled by @omdc/eslint-plugin-destructuring-spacing
+    "array-bracket-spacing": "off",
     "block-spacing": "error",
     "brace-style": "error",
     "camelcase": "error",
@@ -33,7 +33,7 @@
     "new-cap": "error",
     "new-parens": "error",
     "no-caller": "error",
-    "no-console": [1, {"allow": [""]}],
+    "no-console": ["warn", {"allow": [""]}],
     "no-extra-parens": ["error", "all", {"ignoreJSX": "all"}],
     "no-label-var": "error",
     "no-labels": "error",
@@ -47,7 +47,7 @@
     "no-trailing-spaces": "error",
     "no-var": "error",
     "no-whitespace-before-property": "error",
-    "object-curly-spacing": "off", // Handled by @omdc/eslint-plugin-destructuring-spacing
+    "object-curly-spacing": "off",
     "one-var": ["error", "never"],
     "prefer-const": "error",
     "promise/always-return": "off",
