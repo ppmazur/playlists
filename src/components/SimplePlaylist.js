@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledRow = styled.div`
   display: flex;
@@ -22,6 +23,16 @@ const SimplePlaylist = ({ isActive, playlist, onClick }) =>
   >
     {playlist.name}
   </StyledRow>;
+
+SimplePlaylist.propTypes = {
+  isActive: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  playlist: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    tracks: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};
 
 const mapStateToProps = (state, { playlistId }) => ({
   playlist: state.playlists.byId[playlistId],

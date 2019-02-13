@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { openPlaylistsModal } from '../actions';
 import { parseDuration } from '../helpers/track';
@@ -38,6 +39,17 @@ const Track = ({ index, openPlaylistsModal, track }) =>
       &#10010;
     </Button>
   </StyledTrack>;
+
+Track.propTypes = {
+  index: PropTypes.number.isRequired,
+  openPlaylistsModal: PropTypes.func.isRequired,
+  track: PropTypes.shape({
+    artist: PropTypes.string.isRequired,
+    duration: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 const mapStateToProps = (state, { trackId }) => ({
   track: state.tracks.byId[trackId],

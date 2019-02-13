@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import SimplePlaylist from './SimplePlaylist';
 import { Button } from './common';
@@ -53,6 +54,18 @@ const Modal = ({ addTrack, closeModal, playlists, trackToAdd }) => {
         </CloseButton>
       </StyledModal>
     </ModalWrapper>;
+};
+
+Modal.propTypes = {
+  addTrack: PropTypes.func.isRequired,
+  closeModal: PropTypes.func.isRequired,
+  playlists: PropTypes.arrayOf(PropTypes.string),
+  trackToAdd: PropTypes.shape({
+    artist: PropTypes.string.isRequired,
+    duration: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
 };
 
 const mapStateToProps = ({ playlists, tracks }) => ({

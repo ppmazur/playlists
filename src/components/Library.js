@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import SimplePlaylist from './SimplePlaylist';
 import { setActivePlaylist } from '../actions';
@@ -23,6 +24,12 @@ const Library = ({ activePlaylist, playlists, setActivePlaylist }) =>
       />
     )}
   </StyledList>;
+
+Library.propTypes = {
+  activePlaylist: PropTypes.string.isRequired,
+  playlists: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setActivePlaylist: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
   playlists: state.playlists.allIds,

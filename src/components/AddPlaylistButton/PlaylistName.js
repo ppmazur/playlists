@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { addPlaylist } from '../../actions';
@@ -49,6 +50,11 @@ const PlaylistName = ({ addPlaylist, onComplete }) => {
       </Button>
     </Wrapper>
   );
+};
+
+PlaylistName.propTypes = {
+  addPlaylist: PropTypes.func.isRequired,
+  onComplete: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({

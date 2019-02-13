@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Track from './Track';
 
@@ -30,6 +31,14 @@ const Playlist = ({ playlist }) =>
       />
     )}
   </StyledPlaylist>;
+
+Playlist.propTypes = {
+  playlist: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    tracks: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};
 
 const mapStateToProps = state => ({
   playlist: state.playlists.byId[state.playlists.activePlaylist],
