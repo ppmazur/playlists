@@ -25,7 +25,7 @@ const SimplePlaylist = ({ isActive, playlist, onClick }) =>
   </StyledRow>;
 
 SimplePlaylist.propTypes = {
-  isActive: PropTypes.bool.isRequired,
+  isActive: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   playlist: PropTypes.shape({
     name: PropTypes.string.isRequired,
