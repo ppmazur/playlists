@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { addPlaylist } from '../../actions';
+import { Button } from '../common';
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,14 +18,6 @@ const Input = styled.input`
   color: inherit;
   font-family: inherit;
   font-size: inherit;
-`;
-
-const Button = styled.div`
-  padding: 10px;
-  cursor: pointer;
-  &:hover {
-    background-color: #00979c;
-  }
 `;
 
 const PlaylistName = ({ addPlaylist, onComplete }) => {
@@ -64,4 +57,5 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(null, mapDispatchToProps)(PlaylistName);
+export default
+connect(null, mapDispatchToProps)(PlaylistName);

@@ -3,6 +3,9 @@ import uniqid from 'uniqid';
 import {
   PLAYLIST_ADD,
   PLAYLIST_SET_ACTIVE,
+  PLAYLIST_ADD_TRACK,
+  PLAYLIST_CLOSE_MODAL,
+  PLAYLIST_OPEN_MODAL,
 } from '../actions';
 
 const playlist1Id = uniqid();
@@ -14,10 +17,12 @@ const initState = {
   },
   allIds: [playlist1Id, playlist2Id],
   activePlaylist: playlist1Id,
+  trackToAdd: null,
 };
 
 const playlists = (state = initState, action) => {
   switch (action.type) {
+
   case PLAYLIST_ADD:
     const { id, name } = action;
     const newPlaylist = {
@@ -30,11 +35,36 @@ const playlists = (state = initState, action) => {
       byId: {...state.byId, [id]: newPlaylist},
       allIds: [...state.allIds, id],
     };
+
   case PLAYLIST_SET_ACTIVE:
     return {
       ...state,
       activePlaylist: action.id,
     };
+
+  case PLAYLIST_OPEN_MODAL:
+    return {
+      ...state,
+      trackToAdd: action.trackId,
+    };
+
+  case PLAYLIST_CLOSE_MODAL:
+    return {
+      ...state,
+      trackToAdd: null,
+    };
+
+  case PLAYLIST_ADD_TRACK:
+    const playlists = {...state.byId};
+    if (!playlists[action.id].tracks.includes(action.trackId)) {
+      playlists[action.id].tracks.push(action.trackId);
+    }
+    return {
+      ...state,
+      byId: {...playlists},
+      trackToAdd: null,
+    };
+
   default:
     return state;
   }

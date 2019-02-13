@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import GlobalStyle from '../theme/globalStyle';
+import Modal from './AssignPlaylistModal';
 import SideBar from './SideBar';
 import Playlist from './Playlist';
 
@@ -16,6 +17,7 @@ class App extends Component {
       <AppWrapper>
         <SideBar />
         <Playlist />
+        <Modal/>
         <GlobalStyle />
       </AppWrapper>
     );
