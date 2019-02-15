@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { addPlaylist } from '../../actions';
-import { Button } from '../common';
+import Button from '../commons/Button';
 
 const Wrapper = styled.div`
   display: flex;

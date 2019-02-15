@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import SimplePlaylist from './SimplePlaylist';
-import { Button } from './common';
+import Button from './commons/Button';
 import {
   addTrackToPlaylist,
   closePlaylistsModal,

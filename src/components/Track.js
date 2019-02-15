@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { openPlaylistsModal } from '../actions';
 import { parseDuration } from '../helpers/track';
-import { Button } from './common';
+import Button from './commons/Button';
 
 const StyledTrack = styled.div`
   display: flex;
