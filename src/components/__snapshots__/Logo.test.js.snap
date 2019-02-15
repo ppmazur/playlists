@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logo /> matches the Logo snapshot 1`] = `
+<div
+  className="sc-bdVaJa iPtADv"
+>
+  <img
+    alt="Playlists App"
+    className="sc-bwzfXH IEEeW"
+    src="logo.png"
+  />
+  <span
+    className="sc-htpNat cwSgYN"
+  >
+    Playlists App
+  </span>
+</div>
+`;

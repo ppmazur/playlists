@@ -9,7 +9,7 @@ import {
 } from '../actions';
 
 const playlist1Id = uniqid();
-const initState = {
+export const initState = {
   byId: {
     [playlist1Id]: {
       id: playlist1Id,

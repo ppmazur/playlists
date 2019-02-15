@@ -1,4 +1,4 @@
-const initState = {
+export const initState = {
   byId: {
     S_1: { id: 'S_1', title: '111 Song', artist: 'Artist Name 1', duration: 210},
     S_2: { id: 'S_2', title: '222 Song', artist: 'Artist Name 2', duration: 115},

@@ -11,16 +11,18 @@ export const FETCH_PLAYLISTS_LOADING = 'LOAD_PLAYLISTS_LOADING';
 export const FETCH_PLAYLISTS_SUCCESS = 'FETCH_PLAYLISTS_SUCCESS';
 export const FETCH_PLAYLISTS_ERROR = 'FETCH_PLAYLISTS_ERROR';
 
+export const fetchPlaylistsSuccess = playlists => ({
+  type: FETCH_PLAYLISTS_SUCCESS,
+  playlists,
+});
+
 export const fetchPlaylists = () => async dispatch => {
   dispatch({
     type: FETCH_PLAYLISTS_LOADING,
   });
   try {
     const playlists = await getPlaylists();
-    dispatch({
-      type: FETCH_PLAYLISTS_SUCCESS,
-      playlists,
-    });
+    dispatch(fetchPlaylistsSuccess(playlists));
   } catch (e) {
     dispatch({
       type: FETCH_PLAYLISTS_ERROR,

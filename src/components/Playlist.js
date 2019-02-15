@@ -20,7 +20,7 @@ const Title = styled.div`
   font-size: large;
 `;
 
-const Playlist = ({ playlist }) =>
+export const Playlist = ({ playlist }) =>
   <StyledPlaylist>
     <Title>{playlist.name}</Title>
     {playlist.tracks.map((track, index) =>

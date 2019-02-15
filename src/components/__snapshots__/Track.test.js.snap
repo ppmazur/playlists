@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Track /> matches the Track snapshot 1`] = `
+<div
+  className="sc-bwzfXH caIDzr"
+>
+  )
+  <span
+    className="sc-htpNat ixiyzb"
+  >
+    artist name
+  </span>
+  <span
+    className="sc-bxivhb fSOxbl"
+  >
+    title test
+  </span>
+  <span
+    className="sc-ifAKCX fqUeIU"
+  >
+    2052:03
+  </span>
+  <div
+    className="sc-bdVaJa cJstJA"
+    onClick={[Function]}
+  >
+    ✚
+  </div>
+</div>
+`;

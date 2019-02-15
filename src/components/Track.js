@@ -27,7 +27,7 @@ const Duration = styled.span`
   font-weight: lighter;
 `;
 
-const Track = ({ index, openPlaylistsModal, track }) =>
+export const Track = ({ index, openPlaylistsModal, track }) =>
   <StyledTrack>
     {index})
     <Artist>{track.artist}</Artist>
@@ -41,7 +41,7 @@ const Track = ({ index, openPlaylistsModal, track }) =>
   </StyledTrack>;
 
 Track.propTypes = {
-  index: PropTypes.number.isRequired,
+  index: PropTypes.number,
   openPlaylistsModal: PropTypes.func.isRequired,
   track: PropTypes.shape({
     artist: PropTypes.string.isRequired,
